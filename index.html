@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Palendrome Game App</title>
+
+    <style>
+        body {
+            background-color: #35BDD0;
+            color: black;
+        }
+
+        .container {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            gap: 1em;
+            background-color: black;
+            color: white;
+            width: 60%;
+            margin: 5em auto;
+            text-align: center;
+        }
+
+        h1 {
+            font-size: 3rem;
+        }
+
+        h2 {
+            font-size: 2rem;
+        }
+
+        input {
+            padding: 1.2em;
+            width: 50%;
+        }
+
+        button {
+            padding: 0.7em 2em;
+            color: blue;
+            background-color: wheat;
+            font-weight: 650;
+            margin-bottom: 3em;
+        }
+
+        button:hover {
+            cursor: pointer;
+            background-color: black;
+            border: 3px solid white;
+            color: #35BDD0;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <h1>Palendrome Game</h1>
+        <h2 id="text">Enter Anything</h2>
+        <input type="text" id="data">
+        <button onclick="checkPalendrome()">Check</button>
+    </div>
+
+    <script>
+
+        let input= (document.getElementById("data"));
+        let text= document.getElementById("text");
+
+        function checkPalendrome() {
+            let string= input.value;
+            for (let i = 0; i < string.length; i++) {
+                if (string[i] === string[string.length - i - 1]) {
+                     text.innerText ="Congrats!, 😍 this is a  palendrome ";
+                }
+                else {
+                     text.innerText = "Oops!!! 😦it is not a palendrome, try again";
+                }
+            }
+        }
+    </script>
+</body>
+
+</html>
